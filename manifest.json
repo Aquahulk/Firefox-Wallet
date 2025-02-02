@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Web3 Wallet",
+    "version": "1.0",
+    "description": "A Web3 wallet for signing in to the blockchain chat app.",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "background": {
+      "page": "background.html"  // Change to a persistent background page
+    },
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://blockchain-communication-system.onrender.com/"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
